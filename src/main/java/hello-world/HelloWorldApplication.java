@@ -1,4 +1,4 @@
-package layout.layout;
+package helloWorld;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
