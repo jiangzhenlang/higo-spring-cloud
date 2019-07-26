@@ -15,7 +15,14 @@ spring:
     port: 5672
     username: guest
     password: guest
+    virtual-host: /
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:1001/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
