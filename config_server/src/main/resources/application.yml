@@ -10,6 +10,11 @@ spring:
           uri: http://admin@192.168.101.30:10101/r/~admin/config.git
           username: admin
           password: admin
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
 eureka:
   client:
     service-url:

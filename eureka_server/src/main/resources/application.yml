@@ -2,7 +2,7 @@ server:
   port: 1001
 spring:
   application:
-    name: eureka_server
+    name: eureka-server
 eureka:
   instance:
     prefer-ip-address: true
