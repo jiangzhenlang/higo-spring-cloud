@@ -1,6 +1,6 @@
 spring:
   application:
-    name: eureka_client
+    name: eureka-client
   cloud:
     config:
       uri: http://localhost:1006
