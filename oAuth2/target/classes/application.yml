@@ -1,0 +1,20 @@
+server:
+  port: 1008
+spring:
+  application:
+    name: oAuth
+  session:
+    store-type: redis
+    redis:
+      namespace: oAuth2
+  redis:
+    host: localhost
+    password: 123456
+    database: 2
+    port: 6379
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:1001/eureka/

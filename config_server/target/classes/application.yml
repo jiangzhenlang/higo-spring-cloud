@@ -1,0 +1,16 @@
+server:
+  port: 1006
+spring:
+  application:
+    name: config_client
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://admin@192.168.101.30:10101/r/~admin/config.git
+          username: admin
+          password: admin
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1001/eureka/
