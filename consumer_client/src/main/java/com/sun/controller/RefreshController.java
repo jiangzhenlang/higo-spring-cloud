@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RefreshScope
 @RestController
-public class Refresh {
+public class RefreshController {
 
   @Value("${properties.name}")
   private String name;
