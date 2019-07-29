@@ -15,8 +15,8 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 public class OAuth2ResourceConfig extends ResourceServerConfigurerAdapter {
 
   @Override
-  public void configure(HttpSecurity http) {
-    // todo
+  public void configure(HttpSecurity http) throws Exception {
+    super.configure(http);
   }
 
   @Override
