@@ -26,14 +26,13 @@ public class GitUtil {
 
     String branch = "master";
     String filePath = "E:\\你怕是失了智\\.git";
-    String remoteDir = "config";
+    //添加目录，可以把目录下的文件都添加到暂存区
+    String localDir = ".";
     String message = "失了智";
     try {
 //      new GitUtil().remoteClone(username, password, remoteUrl, localUrl);
-      new GitUtil().commitAndPush(filePath, username, message, password, remoteUrl);
-    } catch (GitAPIException e) {
-      e.printStackTrace();
-    } catch (IOException e) {
+      new GitUtil().commitAndPush(filePath, message, username, password, localDir);
+    } catch (Exception e) {
       e.printStackTrace();
     }
   }
@@ -45,14 +44,12 @@ public class GitUtil {
   }
 
 
-  public void commitAndPush(String filePath,String message, String username, String password, String remoteDir) throws IOException, GitAPIException {
+  public void commitAndPush(String filePath, String message, String username, String password, String localDir) throws IOException, GitAPIException {
     UsernamePasswordCredentialsProvider provider = new UsernamePasswordCredentialsProvider(username, password);
-    Git git = Git.init().call();
-    git.open(new File(filePath));
-    git.add().addFilepattern("config").call();
+    Git git = Git.open(new File(filePath));
+    git.add().addFilepattern(localDir).call();
     git.commit().setMessage(message).call();
     git.push().setCredentialsProvider(provider).call();
   }
-
 
 }
