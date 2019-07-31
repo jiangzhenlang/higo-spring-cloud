@@ -1,4 +1,4 @@
-package test.java.com.sun;
+package com.sun;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

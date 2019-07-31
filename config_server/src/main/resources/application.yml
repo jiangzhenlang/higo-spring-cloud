@@ -16,6 +16,9 @@ spring:
     username: guest
     password: guest
     virtual-host: /
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
 eureka:
   client:
     service-url:

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="java" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>服务配置页面</title>
+</head>
+<body>
+<div th:each="item, itemStatus : ${properties}">
+  <div style="display: flex">
+    <div th:text=${item.key}></div>
+    <div>服务配置</div>
+  </div>
+  <div th:each="map, index : ${item.value}" style="display: flex; padding-bottom: 5px">
+    <div th:text="${map.key}"></div>
+    <div>:</div>
+    <div>
+      <input th:value="${map.value}"/>
+    </div>
+    <div th:if="${flag}==true">
+      <div>属性名：<input></div>
+      <div>属性值：<input></div>
+    </div>
+  </div>
+  <div style="height: 20px"></div>
+</div>
+</body>
+</html>

@@ -28,21 +28,21 @@ public class GitUtil {
     String message = "失了智";
     try {
 //      new GitUtil().remoteClone(username, password, remoteUrl, localUrl);
-      new GitUtil().addCommitAndPush(filePath, message, username, password, localDir);
+      GitUtil.addCommitAndPush(filePath, message, username, password, localDir);
 //      new GitUtil().updateFile(filePath, username, password);
     } catch (Exception e) {
       e.printStackTrace();
     }
   }
 
-  public void updateFile(String filePath, String username, String password) throws Exception {
+  public static void updateFile(String filePath, String username, String password) throws Exception {
     UsernamePasswordCredentialsProvider provider = new UsernamePasswordCredentialsProvider(username, password);
     Git git = Git.open(new File(filePath));
     git.pull().setCredentialsProvider(provider).call();
     git.submoduleUpdate().call();
   }
 
-  public void addCommitAndPush(String filePath, String message, String username, String password, String localDir) throws IOException, GitAPIException {
+  public static void addCommitAndPush(String filePath, String message, String username, String password, String localDir) throws IOException, GitAPIException {
     UsernamePasswordCredentialsProvider provider = new UsernamePasswordCredentialsProvider(username, password);
     Git git = Git.open(new File(filePath));
     git.add().addFilepattern(localDir).call();
@@ -51,9 +51,9 @@ public class GitUtil {
   }
 
 
-  public void remoteClone(String username, String password, String remoteUrl, String localUrl) throws GitAPIException {
+  public static void remoteClone(String username, String password, String remoteUrl, String localUrl) throws GitAPIException {
     UsernamePasswordCredentialsProvider provider = new UsernamePasswordCredentialsProvider(username, password);
-    Git.cloneRepository().setURI(remoteUrl).setCredentialsProvider(provider).setDirectory(new File(localUrl)).call();
+    Git git = Git.cloneRepository().setURI(remoteUrl).setCredentialsProvider(provider).setDirectory(new File(localUrl)).call();
   }
 
 
