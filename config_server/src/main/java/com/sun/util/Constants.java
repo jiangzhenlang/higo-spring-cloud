@@ -14,6 +14,6 @@ public class Constants {
   static String repositoryPath = "E:\\你怕是失了智\\.git";
   static String username = "suntaozhang";
 
-  static String consumer = "consumer-client";
-  static String eureka_client = "eureka-client";
+  public static String  consumer = "consumer-client";
+  public static String eureka_client = "eureka-client";
 }
